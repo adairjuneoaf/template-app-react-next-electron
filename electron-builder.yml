@@ -1,0 +1,12 @@
+appId: template-app-react-next-electron-typescript
+productName: Template Nextron App
+copyright: Copyright © 2021 Adair Juneo
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null
