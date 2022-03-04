@@ -1,6 +1,6 @@
 ## Template para produção de app com Electron, ReactJS e NextJS
 
-</br><div align="center">
+<div align="center">
 <img alt='img-example-template' src=".github/template_example.png" width='512' height='auto'>
 
 </div>
