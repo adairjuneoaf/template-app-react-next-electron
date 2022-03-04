@@ -1,4 +1,4 @@
-import { screen, BrowserWindow, BrowserViewConstructorOptions } from "electron";
+import { screen, BrowserWindow, ipcMain, app } from "electron";
 import Store from "electron-store";
 
 export default function createWindow(windowName: string, options: any) {
@@ -68,6 +68,10 @@ export default function createWindow(windowName: string, options: any) {
     minHeight: 720,
     frame: false,
     titleBarStyle: "hidden",
+    // titleBarOverlay: {
+    //   color: "#313131",
+    //   symbolColor: "#F9F6F7",
+    // },
     ...options,
     ...state,
     webPreferences: {
@@ -78,6 +82,14 @@ export default function createWindow(windowName: string, options: any) {
   });
 
   win.on("close", saveState);
+
+  ipcMain.on("minimize-app", () => {
+    win.minimize();
+  });
+
+  ipcMain.on("maximize-app", () => {
+    win.isMaximized() ? win.unmaximize() : win.maximize();
+  });
 
   return win;
 }

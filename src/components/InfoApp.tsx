@@ -16,7 +16,7 @@ const InfoApp: React.FC = () => {
         <nav>
           <ul>
             <li>
-              <Link href="/home">
+              <Link href="/">
                 <a title="Ir até a página Home">Home</a>
               </Link>
             </li>
